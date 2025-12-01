@@ -7,11 +7,9 @@ A full suite of models—Logistic Regression, Random Forest, XGBoost, LightGBM, 
 
 To bridge experimentation with real-world decision-making, the model and preprocessing artifacts are deployed in a Streamlit application. The app enables batch CSV prediction, manual feature input, adjustable decision thresholds, and real-time probability scoring, making the solution accessible for analysts and non-technical stakeholders. The resulting system demonstrates how modern data science techniques can be integrated to build accurate, interpretable, and operational credit-risk modeling tools.
 
-Full credit-risk prediction pipeline that includes:
+📊 1. Data Analytics
 
-Data analytics
-
-Exploratory data analysis (EDA)
+Exploratory Data Analysis (EDA)
 
 Missing-value analysis
 
@@ -23,35 +21,43 @@ Class imbalance diagnostics
 
 Outlier analysis
 
-Data preprocessing & feature engineering
+🧹 2. Data Preprocessing & Feature Engineering
 
-Removing constant/high-missing features
+Removal of constant and high-missingness features
 
-Fixing sentinel values (e.g., DAYS_EMPLOYED = 365243)
+Sentinel-value corrections (e.g., DAYS_EMPLOYED = 365243)
 
-Winsorizing high-variance numeric fields
+Winsorization of extreme numeric values
 
-Ratio-engineering (CREDIT/INCOME, ANNUITY/INCOME, AGE_YEARS, etc.)
+Engineered ratios (CREDIT/INCOME, ANNUITY/INCOME, AGE_YEARS, etc.)
 
-Rare-category collapsing
+Rare-category collapsing for sparse categorical variables
 
-Scaling
+Scaling of numeric features
 
-PCA analysis
+PCA analysis for variance structure
 
-Imbalanced classification experimentation
+⚖️ 3. Imbalanced Classification Experiments
 
-Baseline models (RF, Logistic)
+Baseline models (Random Forest, Logistic Regression)
 
-Threshold optimization (0.5, Youden, best-F1, precision≥0.80)
+Threshold optimization:
 
-Alternative stratified splitting
+0.50 default threshold
+
+Youden index
+
+Best-F1 threshold
+
+Precision ≥ 80% thresholding
+
+Alternative stratified train–test splitting
 
 SMOTE oversampling
 
-Retraining models before/after resampling
+Retraining models pre- and post-SMOTE
 
-Advanced machine-learning modeling
+🤖 4. Advanced Machine-Learning Modeling
 
 Random Forest
 
@@ -63,28 +69,42 @@ LightGBM
 
 CatBoost (best model)
 
-Comparing models using ROC-AUC, PR-AUC, precision, recall, F1
+Model comparison via:
 
-Ensemble of multiple boosting models
+ROC-AUC
 
-Model tuning and validation
+PR-AUC
 
-Hyperparameter tuning (CatBoost RS-CV)
+Precision
+
+Recall
+
+F1-score
+
+Ensemble of boosting models
+
+🔧 5. Model Tuning and Validation
+
+CatBoost randomized search (RS-CV)
 
 Anti-leakage retraining
 
-Threshold calibration
+Threshold calibration for risk-sensitive decisions
 
-Final selection of CatBoost
+Final selection of the optimized CatBoost classifier
 
-Deployment and productionization
+📦 6. Deployment & Productionization
 
-Packaging model artifacts (model, scaler, feature list)
+Exporting all artifacts (CatBoost model, scaler, feature list)
 
-Building a Streamlit app for inference
+Building an interactive Streamlit app for inference
 
-Supporting CSV batch upload + manual input
+Supports:
 
-Threshold-controlled predictions
+CSV batch predictions
 
-Reproducible, usable credit-risk scoring tool
+Manual feature input
+
+Adjustable decision thresholds
+
+Fully reproducible and ready-to-use credit-risk scoring tool
